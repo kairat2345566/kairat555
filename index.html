@@ -1,0 +1,295 @@
+</* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Заголовок */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Навигация */
+nav {
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* Секции */
+section {
+    padding: 50px 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+section h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+section p, section ul {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Форма контактов */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Подвал */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+/* Мобильная адаптация */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+
+    form {
+        width: 100%;
+    }
+}
+/* Изображения */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+/* Эффект при наведении на ссылку */
+nav a:hover, form button:hover {
+    background-color: #777;
+    transform: scale(1.05);
+}
+
+/* Эффект при нажатии на кнопку */
+form button:active {
+    transform: scale(0.98);
+}
+/* Тень для заголовков */
+header h1, section h2 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Тень для элементов */
+section, footer {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}/* Стили для input и textarea */
+form input:focus, form textarea:focus {
+    border-color: #333;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+/* Анимация для подвала */
+footer {
+    transition: background-color 0.3s ease-in-out;
+}
+
+footer:hover {
+    background-color: #444;
+}
+/* Дополнительные стили для текста */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+}
+/* Стили для разных состояний кнопок */
+form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+https://youtu.be/IaajYwbi-xQ
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <!-- Кодировка документа -->
+    <meta charset="UTF-8">
+    <!-- Описание страницы (для поисковых систем и социальных сетей) -->
+    <meta name="description" content="Магазин мужской одежды. Стиль, качество, удобство.">
+    <!-- Ключевые слова для поиска -->
+    <meta name="keywords" content="мужская одежда, стиль, магазин, футболки, брюки, куртки">
+    <!-- Мета-тег для языка страницы -->
+    <meta http-equiv="Content-Language" content="ru">
+    <!-- Тема страницы -->
+    <meta name="theme-color" content="#000000">
+    <!-- Титул страницы -->
+    <title>Магазин мужской одежды</title>
+    <!-- Шрифты Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Внешний CSS файл -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Внешний JavaScript файл -->
+    <script src="script.js" defer></script>
+    <!-- Иконка сайта -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Настройки адаптивности для мобильных устройств -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- Навигация -->
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#products">Товары</a>
+        <a href="#about">О нас</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+
+    <!-- Главный контент -->
+    <header>
+        <h1>Магазин мужской одежды</h1>
+        <p>Стиль, качество и удобство для настоящих мужчин.</p>
+    </header>
+
+    <!-- Раздел с категориями товаров -->
+    <section id="products">
+        <h2>Популярные категории</h2>
+        <div class="product-category">
+            <div class="category-item">
+                <img src="tshirt.jpg" alt="Футболки" />
+                <h3>Футболки</h3>
+                <p>Модные и комфортные футболки для любых случаев.</p>
+                <a href="#tshirts" class="btn">Посмотреть</a>
+            </div>
+            <div class="category-item">
+                <img src="jeans.jpg" alt="Джинсы" />
+                <h3>Джинсы</h3>
+                <p>Удобные джинсы для активных дней.</p>
+                <a href="#jeans" class="btn">Посмотреть</a>
+            </div>
+            <div class="category-item">
+                <img src="jackets.jpg" alt="Куртки" />
+                <h3>Куртки</h3>
+                <p>Элегантные и теплые куртки для зимы.</p>
+                <a href="#jackets" class="btn">Посмотреть</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section id="about">
+        <h2>О нас</h2>
+        <p>Мы предлагаем только качественную и стильную одежду для мужчин. В нашем магазине вы найдете все, что нужно для стильного и комфортного образа. Мы всегда следим за последними тенденциями моды, чтобы предложить вам только лучшие товары.</p>
+    </section>
+
+    <!-- Контактная информация -->
+    <section id="contact">
+        <h2>Контакты</h2>
+        <form action="#" method="post">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <p>&copy; 2024 Магазин мужской одежды. Все права защищены.</p>
+    </footer>
+
+    <!-- Аналитика Google -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXX-X');
+    </script>
+</body>
+
+</html>

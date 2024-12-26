@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Кодировка документа -->
+    <meta charset="UTF-8">
+    <!-- Описание страницы (для поисковых систем и социальных сетей) -->
+    <meta name="description" content="Пример веб-страницы с описанием">
+    <!-- Ключевые слова для поиска -->
+    <meta name="keywords" content="веб-сайт, HTML, примеры">
+    <!-- Тема страницы -->
+    <meta name="theme-color" content="#000000">
+    <!-- Информация для социальных сетей -->
+    <meta property="og:title" content="Мой сайт">
+    <meta property="og:description" content="Лучшие веб-разработки">
+    <!-- Титул страницы -->
+    <title>Мой сайт</title>
+    <!-- Внешний CSS файл -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Внешний JavaScript файл -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Добро пожаловать на мой сайт!</h1>
+</body>
+</html>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<!-- Мета-тег для языка страницы -->
+<meta http-equiv="Content-Language" content="ru">
+
+<!-- Указание авторства страницы -->
+<meta name="author" content="Ваше Имя или Компания">
+
+<!-- Указание канонического URL (для предотвращения дублей контента) -->
+<link rel="canonical" href="https://www.вашсайт.ком">
+<!-- Подключаем CSS для Bootstrap -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Подключаем JS для Bootstrap (нужен для модальных окон и других компонентов) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Код Google Analytics (замените "UA-XXXXX-X" на ваш собственный идентификатор) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-XXXXX-X');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Мой сайт",
+  "url": "https://www.вашсайт.ком",
+  "logo": "https://www.вашсайт.ком/logo.png"
+}
+</script>
+<script src="script.js" defer></script>

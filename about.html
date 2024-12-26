@@ -1,0 +1,137 @@
+/* Стили для шрифта */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Навигация */
+nav {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* Главный раздел */
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+/* Категории товаров */
+.product-category {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+}
+
+.category-item {
+    text-align: center;
+    width: 250px;
+}
+
+.category-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.category-item h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.category-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+.category-item .btn {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.category-item .btn:hover {
+    background-color: #555;
+}
+
+/* Секция О нас */
+section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+/* Форма */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Подвал */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

@@ -1,0 +1,216 @@
+/* Стили для разных состояний кнопок */
+form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+form button:active {
+    transform: scale(0.98); /* Немного уменьшается размер кнопки при нажатии */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Легкая тень при нажатии */
+}
+form button:focus {
+    outline: none; /* Убираем стандартный контур */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Добавляем тень вокруг кнопки */
+    border: 2px solid #333; /* Сделать границу кнопки более выразительной */
+}
+form button {
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+/* Кнопка отправки */
+form button.submit {
+    background-color: #28a745;
+}
+
+form button.submit:hover {
+    background-color: #218838;
+}
+
+/* Кнопка отмены */
+form button.cancel {
+    background-color: #dc3545;
+}
+
+form button.cancel:hover {
+    background-color: #c82333;
+}
+body {
+    line-height: 1.7; /* Увеличьте межстрочное расстояние для улучшения читаемости */
+}
+
+section p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+section h2 {
+    font-size: 32px;
+    color: #222;
+    text-transform: uppercase; /* Заглавные буквы для выделения заголовков */
+    margin-bottom: 20px;
+}
+/* Фон для секций */
+section {
+    background-color: #fff; /* Белый фон для контрастности с темным текстом */
+    background-image: url('path_to_image.jpg'); /* Изображение на фоне */
+    background-size: cover; /* Обрезать и масштабировать изображение */
+    background-position: center; /* Позиционирование фона */
+    background-attachment: fixed; /* Фон не двигается при прокрутке */
+    padding: 60px 20px;
+}
+
+/* Заголовок с фоном */
+header {
+    background-image: url('path_to_background_image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+/* Простая карусель */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel:hover img {
+    transform: scale(1.1); /* Увеличение изображения при наведении */
+}
+/* Карточка товара */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin: 15px;
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Увеличение карточки при наведении */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 15px 0;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #777;
+}
+/* Иконки социальных сетей */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Цвет при наведении */
+    transform: scale(1.1); /* Увеличение при наведении */
+}
+/* Мобильное меню */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        background-color: #333;
+        padding: 10px;
+    }
+
+    nav a {
+        padding: 15px;
+        font-size: 1.2rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    form {
+        width: 90%;
+    }
+}
+/* Фиксированная навигация */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Модальное окно */
+.modal {
+    display: none; /* Скрыть по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal.show {
+    display: flex; /* Показать модальное окно */
+}
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #555;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    font-weight: bold;
+}

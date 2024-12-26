@@ -1,0 +1,293 @@
+<<section id="shop">
+<h2>Наши товары</h2>
+<div class="product-card">
+    <img src="product1.jpg" alt="Футболка">
+    <h3>Футболка Мужская</h3>
+    <p>Цена: 1200 руб.</p>
+    <p>Ткань: Хлопок</p>
+    <button class="btn-add">Добавить в корзину</button>
+</div>
+<!-- Можно добавить еще несколько карточек товаров -->
+</section>
+<section id="shop">
+    <h2>Наши товары</h2>
+
+    <!-- Карточка товара 1 -->
+    <div class="product-card" data-id="1">
+        <img src="product1.jpg" alt="Футболка">
+        <h3>Футболка Мужская</h3>
+        <p>Цена: 1200 руб.</p>
+        <p>Ткань: Хлопок</p>
+        <button class="btn-add">Добавить в корзину</button>
+    </div>
+
+    <!-- Карточка товара 2 -->
+    <div class="product-card" data-id="2">
+        <img src="product2.jpg" alt="Джинсы">
+        <h3>Джинсы Мужские</h3>
+        <p>Цена: 2500 руб.</p>
+        <p>Ткань: Деним</p>
+        <button class="btn-add">Добавить в корзину</button>
+    </div>
+
+    <!-- Можно добавить еще несколько карточек товаров -->
+</section>
+
+<!-- Корзина -->
+<section id="cart">
+    <h2>Ваша корзина</h2>
+    <div id="cart-items"></div>
+    <div id="cart-total"></div>
+    <button id="checkout-btn">Оформить заказ</button>
+</section>
+/* Стили для карточек товаров */
+.product-card {
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.product-card .btn-add {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-card .btn-add:hover {
+    background-color: #555;
+}
+
+/* Стили для корзины */
+#cart {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#cart-items {
+    margin-bottom: 20px;
+}
+
+#cart-items .cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#cart-items .cart-item button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cart-items .cart-item button:hover {
+    background-color: #cc0000;
+}
+
+#cart-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#checkout-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#checkout-btn:hover {
+    background-color: #555;
+}// Массив для хранения товаров в корзине
+let cart = [];
+
+// Функция для добавления товара в корзину
+function addToCart(productId, productName, productPrice) {
+    // Проверяем, есть ли товар уже в корзине
+    const existingProductIndex = cart.findIndex(item => item.id === productId);
+
+    if (existingProductIndex !== -1) {
+        // Если товар уже в корзине, увеличиваем количество
+        cart[existingProductIndex].quantity += 1;
+    } else {
+        // Если товара нет в корзине, добавляем новый товар
+        cart.push({
+            id: productId,
+            name: productName,
+            price: productPrice,
+            quantity: 1
+        });
+    }
+
+    updateCart();
+}
+
+// Функция для удаления товара из корзины
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    updateCart();
+}
+
+// Функция для обновления отображения корзины
+function updateCart() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalContainer = document.getElementById('cart-total');
+    cartItemsContainer.innerHTML = '';
+    let totalPrice = 0;
+
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+        itemElement.innerHTML = `
+            <span>${item.name} (x${item.quantity})</span>
+            <span>${item.price * item.quantity} руб.</span>
+            <button onclick="removeFromCart(${item.id})">Удалить</button>
+        `;
+        cartItemsContainer.appendChild(itemElement);
+        totalPrice += item.price * item.quantity;
+    });
+
+    cartTotalContainer.innerHTML = `Общая стоимость: ${totalPrice} руб.`;
+}
+
+// Обработчик события для кнопок "Добавить в корзину"
+document.querySelectorAll('.btn-add').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const productCard = event.target.closest('.product-card');
+        const productId = productCard.dataset.id;
+        const productName = productCard.querySelector('h3').textContent;
+        const productPrice = parseFloat(productCard.querySelector('p').textContent.replace('Цена: ', '').replace(' руб.', ''));
+
+        addToCart(productId, productName, productPrice);
+    });
+});
+
+// Инициализация корзины при загрузке страницы
+updateCart();
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.classList.add('notification');
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    setTimeout(() => {
+        notification.remove();
+    }, 2000);  // Убираем уведомление через 2 секунды
+}
+addToCart(productId, productName, productPrice);
+showNotification(`${productName} добавлен в корзину!`);
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+function updateCart() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalContainer = document.getElementById('cart-total');
+    cartItemsContainer.innerHTML = '';
+    let totalPrice = 0;
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `<p>Ваша корзина пуста</p>`;
+    } else {
+        cart.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('cart-item');
+            itemElement.innerHTML = `
+                <span>${item.name} (x${item.quantity})</span>
+                <span>${item.price * item.quantity} руб.</span>
+                <button onclick="removeFromCart(${item.id})">Удалить</button>
+            `;
+            cartItemsContainer.appendChild(itemElement);
+            totalPrice += item.price * item.quantity;
+        });
+    }
+
+    cartTotalContainer.innerHTML = cart.length === 0 ? '' : `Общая стоимость: ${totalPrice} руб.`;
+}
+<section id="checkout">
+    <h2>Оформление заказа</h2>
+    <form id="order-form">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="address">Адрес:</label>
+        <input type="text" id="address" required>
+        <button type="submit">Подтвердить заказ</button>
+    </form>
+</section>
+@media (max-width: 768px) {
+    .product-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    #cart-items {
+        font-size: 1rem;
+    }
+
+    #checkout-btn {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+    }
+}
+// Сохранение корзины в localStorage
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Загрузка корзины из localStorage
+function loadCart() {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCart();
+    }
+}
+
+// Вызовите loadCart() при загрузке страницы
+loadCart();
